@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>dice</title>
+    <script type="text/javascript">
+    var count=0;
+    function show()
+     {
+        var div=document.getElementById('1');
+        var img="<h2 style='color:#ffffff;margin-left:46%;'>count:"+count+"</h2><br><br><br>";
+        count=count+1;
+        for(var i=0;i<6;i++)
+        {
+            var r=Math.floor(Math.random()*6+1);
+            img+="<img style='background-color:#bb76aa;margin-right:10px;border-width:3px; border-color:#000000; border-style:solid ' src='"+r+".png' width='15%' height='15%' />";
+        }
+      div.innerHTML=img;
+    }
+    </script>
+  </head>
+  <body style="background-color:#000000">
+    <h2 style="color:#bb76aa; text-align:center;"> Hello in my first webpage </h2>
+    <button type="button" name="button" onclick="show()" style="color:#ffffff;margin-left:46%; background-color:#bb76aa">Roll Dice</button>
+    <div id="1"></div>
+  </body>
+</html>
