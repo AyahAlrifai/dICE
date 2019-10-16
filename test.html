@@ -5,23 +5,47 @@
     <title>dice</title>
     <script type="text/javascript">
     var count=1;
+    var btn;
+    var h1;
+    var color;
+    function randColor()
+    {
+      var r,g,b;
+      r=Math.floor(Math.random()*256);
+      g=Math.floor(Math.random()*256);
+      b=Math.floor(Math.random()*256);
+      color="rgb("+r+","+g+","+b+");"
+    }
+    function start()
+    {
+      btn=document.getElementById("2");
+      h1=document.getElementById('1')
+      randColor();
+      h1.setAttribute("style","color:"+color+" text-align:center;")
+      btn.setAttribute("style","color:#000000;margin-left:46%;font-size:1.5em; background-color:"+color)
+      btn.addEventListener("click",show,false)
+    }
     function show()
      {
-        var div=document.getElementById('1');
-        var img="<h2 style='color:#ffffff;margin-left:46%;'>count:"+count+"</h2><br><br><br>";
+        h1.setAttribute("style","color:"+color+" text-align:center;")
+        btn.setAttribute("style","color:#000000;margin-left:46%;font-size:1.5em; background-color:"+color)
+        var div=document.getElementById('3');
+        var img="<h2 style='color:#ffffff;margin-left:47%;'>count:"+count+"</h2><br><br><br>";
         count=count+1;
         for(var i=0;i<6;i++)
         {
             var r=Math.floor(Math.random()*6+1);
-            img+="<img style='background-color:#E5E51A;margin-right:10px;border-width:3px; border-color:#000000; border-style:solid ' src='"+r+".png' width='15%' height='15%' />";
+            img+="<img style='background-color:"+color+";margin-right:10px;border-width:3px; border-color:#000000; border-style:solid ' src='"+r+".png' width='15%' height='15%' />";
         }
       div.innerHTML=img;
+      randColor();
     }
+    window.addEventListener('load',start,false)
     </script>
   </head>
   <body style="background-color:#000000">
-    <h2 style="color:#E5E51A; text-align:center;"> Hello in my first webpage </h2>
-    <button type="button" name="button" onclick="show()" style="color:#000000;margin-left:46%; background-color:#E5E51A">Roll Dice</button>
-    <div id="1"></div>
+    <h1 id='1'> Ayah Khaldoon AL-refai<br> Computer Engineering </h1>
+    <button type="button" name="button" id='2'>Roll Dice</button>
+    <div id="3"></div>
   </body>
 </html>
