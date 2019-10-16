@@ -8,7 +8,7 @@
     var btn,h1;
     var color;
     var arr=[0,0,0,0,0,0],i=0;
-    var truePos=0;
+    var TruePos=0;
     function randColor()
     {
       var r,g,b;
@@ -40,13 +40,13 @@
           if(arr[r-1]==0)
             {
               if(i==r-1)
-              truePos++;
+              TruePos++;
               arr[r-1]=r;
               i++;
               img+="<img style='background-color:"+color+";margin-right:1.6%;' src='"+r+".png' width='15%' height='15%' />";
             }
       }
-      head+="<h2 style='color:#ffffff;margin-left:44%'>True Position:"+truePos+"</h2>";
+      head+="<h2 style='color:#ffffff;margin-left:44%'>True Position:"+TruePos+"</h2>";
       div.innerHTML=head+img;
       randColor();
       arr=[0,0,0,0,0,0];
